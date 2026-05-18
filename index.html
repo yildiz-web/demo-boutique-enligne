@@ -3,59 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b18" />
   <title>Maison Élixir | Boutique de Parfums</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="top-bar">
-    Livraison disponible partout au Maroc — Commande directe par WhatsApp
+    Livraison partout au Maroc - Commande rapide par WhatsApp
   </div>
 
   <header class="header">
     <nav class="navbar">
-      <a href="#" class="logo">
-        <span>Maison</span> Élixir
+
+      <a href="#accueil" class="logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M25 7h14v9H25z" />
+            <path d="M22 16h20v8H22z" />
+            <path d="M16 28c0-5.5 4.5-10 10-10h12c5.5 0 10 4.5 10 10v20c0 5.5-4.5 10-10 10H26c-5.5 0-10-4.5-10-10V28z" />
+            <path d="M23 35c5.5-4.5 12.5-4.5 18 0" class="logo-line" />
+          </svg>
+        </span>
+
+        <span class="logo-text">
+          <strong>Maison Élixir</strong>
+          <small>Parfumerie premium</small>
+        </span>
       </a>
 
       <div class="nav-links" id="navLinks">
         <a href="#accueil">Accueil</a>
         <a href="#produits">Parfums</a>
-        <a href="#avantages">Avantages</a>
+        <a href="#packs">Packs</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="nav-actions">
         <button class="cart-button" id="openCart">
-          Panier
-          <span id="cartCount">0</span>
+          Panier <span id="cartCount">0</span>
         </button>
 
-        <button class="menu-button" id="menuButton">
-          ☰
-        </button>
+        <button class="menu-button" id="menuButton" aria-label="Ouvrir le menu">☰</button>
       </div>
+
     </nav>
   </header>
 
   <section class="hero" id="accueil">
     <div class="hero-content">
-      <div class="hero-text">
-        <span class="label">Collection parfum premium</span>
 
-        <h1>
-          Des parfums élégants pour une présence inoubliable.
-        </h1>
+      <div class="hero-text">
+        <span class="label">Boutique de parfums premium</span>
+
+        <h1>Des parfums raffinés pour chaque moment.</h1>
 
         <p>
-          Une boutique en ligne moderne pour présenter des parfums,
-          afficher les prix, filtrer les produits et recevoir les commandes
-          directement par WhatsApp.
+          Découvrez une sélection élégante de parfums pour homme, femme et mixte.
+          Ajoutez vos articles au panier et envoyez votre commande directement
+          par WhatsApp.
         </p>
 
         <div class="hero-buttons">
-          <a href="#produits" class="btn btn-primary">Découvrir la collection</a>
-          <button class="btn btn-outline" id="openCartHero">Voir le panier</button>
+          <a href="#produits" class="btn btn-primary">Découvrir les parfums</a>
+          <a href="#packs" class="btn btn-outline">Voir les packs</a>
         </div>
 
         <div class="hero-stats">
@@ -65,7 +76,7 @@
           </div>
           <div>
             <strong>3</strong>
-            <span>Catégories</span>
+            <span>Packs</span>
           </div>
           <div>
             <strong>24h</strong>
@@ -76,63 +87,68 @@
 
       <div class="hero-visual">
         <div class="image-frame">
-          <img 
-            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=80" 
+          <img
+            src="https://images.pexels.com/photos/8796322/pexels-photo-8796322.jpeg?auto=compress&cs=tinysrgb&w=1200"
             alt="Parfum premium"
           />
         </div>
 
         <div class="hero-card hero-card-top">
-          <span>Nouvelle arrivée</span>
+          <span>Nouvelle collection</span>
           <strong>Oud Royal</strong>
-          <p>499 DH</p>
+          <p>À partir de 499 DH</p>
         </div>
 
         <div class="hero-card hero-card-bottom">
-          <span>Commande</span>
+          <span>Service client</span>
           <strong>WhatsApp</strong>
-          <p>Simple et rapide</p>
+          <p>Réponse rapide</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <main>
 
-    <section class="advantages" id="avantages">
-      <article class="advantage-card">
-        <div class="icon">✦</div>
-        <h3>Présentation premium</h3>
-        <p>Images professionnelles, prix clairs et fiches produits lisibles.</p>
-      </article>
+    <section class="trust-section" aria-label="Services boutique">
+      <div class="trust-item">
+        <span class="trust-icon">01</span>
+        <div>
+          <h3>Livraison au Maroc</h3>
+          <p>Expédition rapide dans toutes les villes avec suivi de commande.</p>
+        </div>
+      </div>
 
-      <article class="advantage-card">
-        <div class="icon">✓</div>
-        <h3>Panier simple</h3>
-        <p>Le client ajoute ses produits puis valide sa commande par WhatsApp.</p>
-      </article>
+      <div class="trust-item">
+        <span class="trust-icon">02</span>
+        <div>
+          <h3>Conseil parfum</h3>
+          <p>Accompagnement WhatsApp pour choisir homme, femme ou mixte.</p>
+        </div>
+      </div>
 
-      <article class="advantage-card">
-        <div class="icon">↗</div>
-        <h3>Responsive</h3>
-        <p>Design adapté au téléphone, tablette et ordinateur.</p>
-      </article>
+      <div class="trust-item">
+        <span class="trust-icon">03</span>
+        <div>
+          <h3>Packs cadeaux</h3>
+          <p>Présentations élégantes pour offrir une expérience premium.</p>
+        </div>
+      </div>
     </section>
 
     <section class="products-section" id="produits">
       <div class="section-heading">
         <div>
-          <span class="label dark">Notre sélection</span>
+          <span class="label dark">Notre collection</span>
           <h2>Parfums disponibles</h2>
-          <p>Filtrez les produits selon la catégorie ou recherchez directement un parfum.</p>
+          <p>
+            Recherchez votre parfum préféré ou filtrez les produits selon la catégorie.
+          </p>
         </div>
 
         <div class="filters">
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Rechercher un parfum..."
-          />
+          <input type="text" id="searchInput" placeholder="Rechercher..." />
 
           <select id="categoryFilter">
             <option value="all">Toutes les catégories</option>
@@ -146,27 +162,161 @@
       <div class="products-grid" id="productsGrid"></div>
     </section>
 
+    <section class="packs-section" id="packs">
+      <div class="section-heading center">
+        <div>
+          <span class="label dark">Offres spéciales</span>
+          <h2>Packs parfums</h2>
+          <p>
+            Des packs pensés pour offrir plus de valeur et une expérience plus réelle.
+          </p>
+        </div>
+      </div>
+
+      <div class="packs-grid">
+
+        <article class="pack-card">
+          <div class="pack-image">
+            <img
+              src="https://images.pexels.com/photos/11711822/pexels-photo-11711822.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              alt="Pack Découverte avec deux parfums"
+            />
+            <span class="pack-image-count">2 parfums</span>
+          </div>
+
+          <div class="pack-content">
+            <span class="pack-tag">Découverte</span>
+            <h3>Pack Découverte</h3>
+            <p>
+              Une sélection idéale pour découvrir deux fragrances élégantes à prix avantageux.
+            </p>
+
+            <ul>
+              <li>2 parfums au choix</li>
+              <li>Homme, femme ou mixte</li>
+              <li>Emballage simple inclus</li>
+            </ul>
+
+            <div class="pack-bottom">
+              <div>
+                <span>À partir de</span>
+                <strong>549 DH</strong>
+              </div>
+
+              <a
+                href="https://wa.me/212699890818?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Découverte."
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Commander
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pack-card featured-pack">
+          <div class="pack-label">Le plus demandé</div>
+
+          <div class="pack-image">
+            <img
+              src="https://images.pexels.com/photos/32817143/pexels-photo-32817143.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              alt="Pack Élégance avec trois parfums"
+            />
+            <span class="pack-image-count">3 parfums</span>
+          </div>
+
+          <div class="pack-content">
+            <span class="pack-tag">Cadeau</span>
+            <h3>Pack Élégance</h3>
+            <p>
+              Un pack parfait pour offrir une expérience raffinée avec une présentation premium.
+            </p>
+
+            <ul>
+              <li>3 parfums au choix</li>
+              <li>Boîte cadeau premium</li>
+              <li>Carte cadeau personnalisée</li>
+            </ul>
+
+            <div class="pack-bottom">
+              <div>
+                <span>À partir de</span>
+                <strong>799 DH</strong>
+              </div>
+
+              <a
+                href="https://wa.me/212699890818?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Élégance."
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Commander
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-image">
+            <img
+              src="https://images.pexels.com/photos/30999129/pexels-photo-30999129.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              alt="Pack Luxe avec quatre parfums"
+            />
+            <span class="pack-image-count">4 parfums</span>
+          </div>
+
+          <div class="pack-content">
+            <span class="pack-tag">Premium</span>
+            <h3>Pack Luxe</h3>
+            <p>
+              Une sélection haut de gamme pour les amateurs de parfums intenses.
+            </p>
+
+            <ul>
+              <li>4 parfums premium</li>
+              <li>Sélection orientale et boisée</li>
+              <li>Emballage cadeau offert</li>
+            </ul>
+
+            <div class="pack-bottom">
+              <div>
+                <span>À partir de</span>
+                <strong>999 DH</strong>
+              </div>
+
+              <a
+                href="https://wa.me/212699890818?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Luxe."
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Commander
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
     <section class="banner">
       <div>
-        <span class="label">Offre spéciale</span>
-        <h2>Créez votre boutique en ligne professionnelle</h2>
+        <span class="label">Service boutique</span>
+        <h2>Commandez facilement vos parfums préférés</h2>
         <p>
-          Cette démo peut être adaptée pour parfums, cosmétiques, vêtements,
-          accessoires, pâtisserie ou tout autre commerce.
+          Sélectionnez vos produits, ajoutez-les au panier et envoyez votre commande
+          directement par WhatsApp.
         </p>
       </div>
 
-      <a href="https://wa.me/212600000000" target="_blank" class="btn btn-light">
-        Demander une boutique
-      </a>
+      <button class="btn btn-light" id="openCartHero">
+        Voir le panier
+      </button>
     </section>
 
     <section class="contact-section" id="contact">
       <div class="contact-card">
-        <h2>Prêt à commander ?</h2>
+        <h2>Besoin d’un conseil ?</h2>
         <p>
-          Ajoutez vos produits au panier puis envoyez la commande directement
-          par WhatsApp.
+          Contactez-nous sur WhatsApp pour choisir le parfum qui correspond à votre style.
         </p>
         <button class="btn btn-primary" id="openCartContact">
           Voir mon panier
@@ -175,6 +325,48 @@
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="#accueil" class="footer-logo">Maison Élixir</a>
+        <p>
+          Boutique de parfums premium proposant une sélection élégante pour homme,
+          femme et mixte, avec commande rapide par WhatsApp.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <a href="#accueil">Accueil</a>
+        <a href="#produits">Parfums</a>
+        <a href="#packs">Packs</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Catégories</h4>
+        <a href="#produits">Parfums Homme</a>
+        <a href="#produits">Parfums Femme</a>
+        <a href="#produits">Parfums Mixtes</a>
+        <a href="#packs">Packs Cadeaux</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>WhatsApp : +212 699 890 818</p>
+        <p>Email : contact@maisonelixir.com</p>
+        <p>Livraison partout au Maroc</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Maison Élixir. Tous droits réservés.</p>
+      <p>Boutique de parfums premium.</p>
+    </div>
+  </footer>
 
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
@@ -205,6 +397,16 @@
   <div class="toast" id="toast">
     Produit ajouté au panier
   </div>
+
+  <a
+    href="https://wa.me/212699890818?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20parfums."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contacter Maison Élixir sur WhatsApp"
+  >
+    <span>WhatsApp</span>
+  </a>
 
   <script src="script.js"></script>
 </body>
