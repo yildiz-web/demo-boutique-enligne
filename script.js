@@ -6,7 +6,7 @@ const products = [
     price: 499,
     badge: "Best seller",
     description: "Parfum oriental intense avec oud, ambre et épices nobles.",
-    image: "https://images.pexels.com/photos/30981935/pexels-photo-30981935.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     price: 349,
     badge: "Homme",
     description: "Signature masculine profonde avec notes boisées et cuir.",
-    image: "https://images.pexels.com/photos/7487831/pexels-photo-7487831.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const products = [
     price: 289,
     badge: "Doux",
     description: "Fragrance féminine florale, musquée et très raffinée.",
-    image: "https://images.pexels.com/photos/15097508/pexels-photo-15097508.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1585386959984-a41552231658?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const products = [
     price: 379,
     badge: "Premium",
     description: "Mélange chaud d’ambre, musc blanc et bois précieux.",
-    image: "https://images.pexels.com/photos/11711832/pexels-photo-11711832.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const products = [
     price: 259,
     badge: "Frais",
     description: "Parfum frais avec notes marines, citronnées et aromatiques.",
-    image: "https://images.pexels.com/photos/31132401/pexels-photo-31132401.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1608528577891-eb055944f2e1?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const products = [
     price: 319,
     badge: "Nouveau",
     description: "Notes chaudes de vanille, jasmin et bois blanc.",
-    image: "https://images.pexels.com/photos/12528067/pexels-photo-12528067.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const products = [
     price: 299,
     badge: "Élégant",
     description: "Parfum lumineux avec notes fruitées, florales et poudrées.",
-    image: "https://images.pexels.com/photos/34154866/pexels-photo-34154866.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const products = [
     price: 429,
     badge: "Intense",
     description: "Parfum puissant avec bois de santal, tabac et musc.",
-    image: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&w=900"
+    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80"
   }
 ];
 
@@ -147,7 +147,7 @@ function renderProducts() {
 
         <div class="product-bottom">
           <span class="price">${product.price} DH</span>
-          <button class="add-button" onclick="addToCart(${product.id})" aria-label="Ajouter ${product.name} au panier">+</button>
+          <button class="add-button" onclick="addToCart(${product.id})">+</button>
         </div>
       </div>
     `;
@@ -230,10 +230,10 @@ function updateCart() {
         <p>${item.price} DH — ${formatCategory(item.category)}</p>
 
         <div class="cart-controls">
-          <button class="qty-button" onclick="decreaseQuantity(${item.id})" aria-label="Réduire la quantité">−</button>
+          <button class="qty-button" onclick="decreaseQuantity(${item.id})">−</button>
           <strong>${item.quantity}</strong>
-          <button class="qty-button" onclick="increaseQuantity(${item.id})" aria-label="Augmenter la quantité">+</button>
-          <button class="remove-button" onclick="removeFromCart(${item.id})" aria-label="Retirer du panier">×</button>
+          <button class="qty-button" onclick="increaseQuantity(${item.id})">+</button>
+          <button class="remove-button" onclick="removeFromCart(${item.id})">×</button>
         </div>
       </div>
     `;
@@ -269,7 +269,7 @@ function sendOrderToWhatsApp() {
     return;
   }
 
-  const phoneNumber = "212699890818";
+  const phoneNumber = "212600000000";
 
   let message = "Bonjour, je souhaite commander :\n\n";
 
