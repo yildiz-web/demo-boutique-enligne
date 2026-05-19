@@ -1,3 +1,4 @@
+// Données du catalogue : les cartes produits sont générées automatiquement.
 const products = [
   {
     id: 1,
@@ -92,6 +93,7 @@ const navLinks = document.getElementById("navLinks");
 
 let cart = [];
 
+// Affiche une catégorie lisible dans les cartes et le panier.
 function formatCategory(category) {
   if (category === "homme") return "Homme";
   if (category === "femme") return "Femme";
@@ -139,8 +141,11 @@ function renderProducts() {
     `;
     productsGrid.appendChild(card);
   });
+
+  setupRevealAnimations();
 }
 
+// Ajoute un produit au panier ou augmente sa quantité.
 function addToCart(productId) {
   const product = products.find(item => item.id === productId);
   const existingProduct = cart.find(item => item.id === productId);
@@ -217,6 +222,7 @@ function updateCart() {
   cartTotal.textContent = `${total} DH`;
 }
 
+// Ouvre et ferme le panier latéral.
 function showCart() {
   cartDrawer.classList.add("active");
   overlay.classList.add("active");
@@ -227,11 +233,13 @@ function hideCart() {
   overlay.classList.remove("active");
 }
 
+// Petit retour visuel après ajout au panier.
 function showToast() {
   toast.classList.add("active");
   setTimeout(() => toast.classList.remove("active"), 1800);
 }
 
+// Génère un message WhatsApp clair avec les produits sélectionnés.
 function sendOrderToWhatsApp() {
   if (cart.length === 0) {
     alert("Votre panier est vide.");
@@ -263,11 +271,58 @@ whatsappOrder.addEventListener("click", sendOrderToWhatsApp);
 
 menuButton.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  menuButton.setAttribute("aria-expanded", navLinks.classList.contains("active"));
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => navLinks.classList.remove("active"));
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
 });
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    hideCart();
+    navLinks.classList.remove("active");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+// Animation légère d'apparition des sections et cartes au scroll.
+function setupRevealAnimations() {
+  const revealItems = [
+    ...document.querySelectorAll(".trust-item"),
+    ...document.querySelectorAll(".section-heading"),
+    ...document.querySelectorAll(".product-card"),
+    ...document.querySelectorAll(".pack-card"),
+    ...document.querySelectorAll(".about-section"),
+    ...document.querySelectorAll(".banner"),
+    ...document.querySelectorAll(".contact-card")
+  ];
+
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal");
+    if (index % 3 === 1) item.classList.add("reveal-delay-1");
+    if (index % 3 === 2) item.classList.add("reveal-delay-2");
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach(item => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+
+  revealItems.forEach(item => observer.observe(item));
+}
 
 renderProducts();
 updateCart();

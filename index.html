@@ -9,6 +9,11 @@
 </head>
 <body>
   <div class="top-bar">
+    <span class="top-bar-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h9A2.5 2.5 0 0 1 17 6.5V8h1.55c.65 0 1.25.31 1.63.84l1.45 2.03c.24.34.37.74.37 1.16v3.22A1.75 1.75 0 0 1 20.25 17H19a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0h-.25A1.75 1.75 0 0 1 1 15.25V8.5A2.5 2.5 0 0 1 3 6.5Zm2.5-1A1 1 0 0 0 4.5 6.5v8.75c0 .14.11.25.25.25h.42a3 3 0 0 1 5.66 0h2.34a3 3 0 0 1 2.33-1.46V6.5a1 1 0 0 0-1-1h-9Zm11.5 4V14h.17a3 3 0 0 1 1.66 1.5h1.42c.14 0 .25-.11.25-.25v-3.22a.5.5 0 0 0-.09-.29L18.96 9.7a.5.5 0 0 0-.41-.21H17ZM6 17a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Zm8.5 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Z" />
+      </svg>
+    </span>
     Livraison partout au Maroc - Commande rapide par WhatsApp
   </div>
 
@@ -33,6 +38,7 @@
         <a href="#accueil">Accueil</a>
         <a href="#produits">Parfums</a>
         <a href="#packs">Packs</a>
+        <a href="#apropos">À propos</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -40,11 +46,12 @@
         <button class="cart-button" id="openCart">
           Panier <span id="cartCount">0</span>
         </button>
-        <button class="menu-button" id="menuButton" aria-label="Ouvrir le menu">☰</button>
+        <button class="menu-button" id="menuButton" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       </div>
     </nav>
   </header>
 
+  <!-- Hero principal : première impression et appels à l'action -->
   <section class="hero" id="accueil">
     <div class="hero-content">
       <div class="hero-text">
@@ -73,9 +80,11 @@
           />
         </div>
         <div class="hero-card hero-card-top">
-          <span>Nouvelle collection</span>
+          <span class="hero-card-badge">Nouvelle collection</span>
           <strong>Oud Royal</strong>
+          <small>Parfum oriental premium</small>
           <p>À partir de 499 DH</p>
+          <a href="#produits">Découvrir</a>
         </div>
         <div class="hero-card hero-card-bottom">
           <span>Service client</span>
@@ -87,6 +96,7 @@
   </section>
 
   <main>
+    <!-- Preuves de confiance pour rassurer le client avant l'achat -->
     <section class="trust-section" aria-label="Services boutique">
       <div class="trust-item">
         <span class="trust-icon">01</span>
@@ -111,6 +121,7 @@
       </div>
     </section>
 
+    <!-- Catalogue généré par JavaScript depuis script.js -->
     <section class="products-section" id="produits">
       <div class="section-heading">
         <div>
@@ -131,6 +142,7 @@
       <div class="products-grid" id="productsGrid"></div>
     </section>
 
+    <!-- Offres packagées pour augmenter la valeur moyenne du panier -->
     <section class="packs-section" id="packs">
       <div class="section-heading center">
         <div>
@@ -207,6 +219,37 @@
       </div>
     </section>
 
+    <!-- Présentation de la marque pour renforcer la confiance client -->
+    <section class="about-section" id="apropos">
+      <div class="about-visual">
+        <img
+          src="https://images.pexels.com/photos/4110337/pexels-photo-4110337.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Boutique de parfums premium"
+        />
+      </div>
+
+      <div class="about-content">
+        <span class="label dark">À propos</span>
+        <h2>Une expérience parfum pensée avec élégance.</h2>
+        <p>
+          Maison Élixir sélectionne des fragrances raffinées pour accompagner chaque
+          style, chaque occasion et chaque envie. Notre objectif est simple :
+          proposer une boutique claire, premium et facile à utiliser.
+        </p>
+        <p>
+          Vous choisissez vos parfums, nous vous accompagnons par WhatsApp pour
+          finaliser votre commande rapidement, avec un conseil personnalisé et une
+          livraison partout au Maroc.
+        </p>
+
+        <div class="about-points">
+          <span>Sélection premium</span>
+          <span>Conseil personnalisé</span>
+          <span>Commande rapide</span>
+        </div>
+      </div>
+    </section>
+
     <section class="banner">
       <div>
         <span class="label">Service boutique</span>
@@ -236,6 +279,7 @@
         <a href="#accueil">Accueil</a>
         <a href="#produits">Parfums</a>
         <a href="#packs">Packs</a>
+        <a href="#apropos">À propos</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-column">
@@ -258,6 +302,7 @@
     </div>
   </footer>
 
+  <!-- Panier latéral connecté à WhatsApp -->
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
       <div>
