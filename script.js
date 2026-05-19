@@ -6,7 +6,7 @@ const products = [
     price: 499,
     badge: "Best seller",
     description: "Parfum oriental intense avec oud, ambre et épices nobles.",
-    image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/30981935/pexels-photo-30981935.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     price: 349,
     badge: "Homme",
     description: "Signature masculine profonde avec notes boisées et cuir.",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/7487831/pexels-photo-7487831.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const products = [
     price: 289,
     badge: "Doux",
     description: "Fragrance féminine florale, musquée et très raffinée.",
-    image: "https://images.unsplash.com/photo-1585386959984-a41552231658?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/15097508/pexels-photo-15097508.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const products = [
     price: 379,
     badge: "Premium",
     description: "Mélange chaud d’ambre, musc blanc et bois précieux.",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/11711832/pexels-photo-11711832.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const products = [
     price: 259,
     badge: "Frais",
     description: "Parfum frais avec notes marines, citronnées et aromatiques.",
-    image: "https://images.unsplash.com/photo-1608528577891-eb055944f2e1?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/31132401/pexels-photo-31132401.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const products = [
     price: 319,
     badge: "Nouveau",
     description: "Notes chaudes de vanille, jasmin et bois blanc.",
-    image: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/12528067/pexels-photo-12528067.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const products = [
     price: 299,
     badge: "Élégant",
     description: "Parfum lumineux avec notes fruitées, florales et poudrées.",
-    image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/34154866/pexels-photo-34154866.jpeg?auto=compress&cs=tinysrgb&w=900"
   },
   {
     id: 8,
@@ -69,26 +69,23 @@ const products = [
     price: 429,
     badge: "Intense",
     description: "Parfum puissant avec bois de santal, tabac et musc.",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80"
+    image: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&w=900"
   }
 ];
 
 const productsGrid = document.getElementById("productsGrid");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
-
 const cartDrawer = document.getElementById("cartDrawer");
 const overlay = document.getElementById("overlay");
 const openCart = document.getElementById("openCart");
 const openCartHero = document.getElementById("openCartHero");
 const openCartContact = document.getElementById("openCartContact");
 const closeCart = document.getElementById("closeCart");
-
 const cartItems = document.getElementById("cartItems");
 const cartCount = document.getElementById("cartCount");
 const cartTotal = document.getElementById("cartTotal");
 const whatsappOrder = document.getElementById("whatsappOrder");
-
 const toast = document.getElementById("toast");
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
@@ -110,48 +107,36 @@ function renderProducts() {
       product.name.toLowerCase().includes(searchValue) ||
       product.description.toLowerCase().includes(searchValue) ||
       product.category.toLowerCase().includes(searchValue);
-
-    const matchesCategory =
-      selectedCategory === "all" || product.category === selectedCategory;
-
+    const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
   productsGrid.innerHTML = "";
 
   if (filteredProducts.length === 0) {
-    productsGrid.innerHTML = `
-      <div class="empty-message">
-        Aucun parfum trouvé. Essayez une autre recherche.
-      </div>
-    `;
+    productsGrid.innerHTML = `<div class="empty-message">Aucun parfum trouvé. Essayez une autre recherche.</div>`;
     return;
   }
 
   filteredProducts.forEach(product => {
     const card = document.createElement("article");
     card.className = "product-card";
-
     card.innerHTML = `
       <div class="product-image">
         <img src="${product.image}" alt="${product.name}">
         <span class="product-badge">${product.badge}</span>
       </div>
-
       <div class="product-content">
         <span class="product-category">${formatCategory(product.category)}</span>
         <h3>${product.name}</h3>
         <p>${product.description}</p>
-
         <div class="rating">★★★★★</div>
-
         <div class="product-bottom">
           <span class="price">${product.price} DH</span>
-          <button class="add-button" onclick="addToCart(${product.id})">+</button>
+          <button class="add-button" onclick="addToCart(${product.id})" aria-label="Ajouter ${product.name} au panier">+</button>
         </div>
       </div>
     `;
-
     productsGrid.appendChild(card);
   });
 }
@@ -163,10 +148,7 @@ function addToCart(productId) {
   if (existingProduct) {
     existingProduct.quantity += 1;
   } else {
-    cart.push({
-      ...product,
-      quantity: 1
-    });
+    cart.push({ ...product, quantity: 1 });
   }
 
   updateCart();
@@ -175,7 +157,6 @@ function addToCart(productId) {
 
 function increaseQuantity(productId) {
   const product = cart.find(item => item.id === productId);
-
   if (product) {
     product.quantity += 1;
     updateCart();
@@ -184,7 +165,6 @@ function increaseQuantity(productId) {
 
 function decreaseQuantity(productId) {
   const product = cart.find(item => item.id === productId);
-
   if (!product) return;
 
   if (product.quantity > 1) {
@@ -205,11 +185,7 @@ function updateCart() {
   cartItems.innerHTML = "";
 
   if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <div class="empty-message">
-        Votre panier est vide.
-      </div>
-    `;
+    cartItems.innerHTML = `<div class="empty-message">Votre panier est vide.</div>`;
   }
 
   let total = 0;
@@ -221,23 +197,19 @@ function updateCart() {
 
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
-
     cartItem.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
-
       <div class="cart-info">
         <h4>${item.name}</h4>
         <p>${item.price} DH — ${formatCategory(item.category)}</p>
-
         <div class="cart-controls">
-          <button class="qty-button" onclick="decreaseQuantity(${item.id})">−</button>
+          <button class="qty-button" onclick="decreaseQuantity(${item.id})" aria-label="Réduire la quantité">−</button>
           <strong>${item.quantity}</strong>
-          <button class="qty-button" onclick="increaseQuantity(${item.id})">+</button>
-          <button class="remove-button" onclick="removeFromCart(${item.id})">×</button>
+          <button class="qty-button" onclick="increaseQuantity(${item.id})" aria-label="Augmenter la quantité">+</button>
+          <button class="remove-button" onclick="removeFromCart(${item.id})" aria-label="Retirer du panier">×</button>
         </div>
       </div>
     `;
-
     cartItems.appendChild(cartItem);
   });
 
@@ -257,10 +229,7 @@ function hideCart() {
 
 function showToast() {
   toast.classList.add("active");
-
-  setTimeout(() => {
-    toast.classList.remove("active");
-  }, 1800);
+  setTimeout(() => toast.classList.remove("active"), 1800);
 }
 
 function sendOrderToWhatsApp() {
@@ -269,8 +238,7 @@ function sendOrderToWhatsApp() {
     return;
   }
 
-  const phoneNumber = "212600000000";
-
+  const phoneNumber = "212699890818";
   let message = "Bonjour, je souhaite commander :\n\n";
 
   cart.forEach(item => {
@@ -278,17 +246,14 @@ function sendOrderToWhatsApp() {
   });
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   message += `\nTotal : ${total} DH\n`;
   message += "\nMerci.";
 
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
+  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
 }
 
 searchInput.addEventListener("input", renderProducts);
 categoryFilter.addEventListener("change", renderProducts);
-
 openCart.addEventListener("click", showCart);
 openCartHero.addEventListener("click", showCart);
 openCartContact.addEventListener("click", showCart);
@@ -301,9 +266,7 @@ menuButton.addEventListener("click", () => {
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
+  link.addEventListener("click", () => navLinks.classList.remove("active"));
 });
 
 renderProducts();
